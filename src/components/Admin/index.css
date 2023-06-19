@@ -1,0 +1,103 @@
+.table-container {
+  text-align: center;
+  width: 90vw;
+}
+.table {
+  border: 1px solid gray;
+}
+.display {
+  display: flex;
+  justify-content: space-around;
+}
+.display-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.display-between {
+  display: flex;
+  justify-content: space-around;
+}
+.display-center {
+  display: flex;
+  justify-content: center;
+}
+
+.google-signin-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #fff;
+  color: #737373;
+  border: 1px solid #737373;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.google-signin-button img {
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+}
+
+.test-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bg-each-candidate-field {
+  display: flex;
+  flex-direction: row;
+  gap: 8px; /* Adjust the gap value to set the desired spacing */
+}
+.input-field {
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px; /* Adjust the width value as per your requirements */
+}
+.send-page-container {
+  background-color: bisque;
+  height: 100vh;
+  background-size: cover;
+}
+.Proceed-button {
+  align-self: center;
+}
+.radio-button-container {
+  padding: 3px;
+  box-shadow: 2px, 2px;
+  width: 90vw;
+  margin-left: 50px;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.each-check-box {
+  margin-top: 11px;
+}
+.test-count-input {
+  margin-bottom: 7px;
+  align-self: flex-end;
+  justify-content: end;
+  padding-left: 50px;
+}
+.each-input-student-details {
+  margin-left: 15vw;
+}
+.radio-input-field-container {
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
