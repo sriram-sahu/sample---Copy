@@ -22,9 +22,8 @@ export default function StudentNavbar() {
             <MenuIcon />
           </IconButton>
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-            News
+            Test
           </Typography>
-          <Button color='inherit'>Login</Button>
         </Toolbar>
       </AppBar>
     </Box>

@@ -50,7 +50,9 @@ export default function StudentLogin() {
       .then((response) => response.json())
       .then((result) => {
         console.log(result.data);
-        const filteredData = result.data.find((item) => item.email === email);
+        const filteredData = result.data.find(
+          (item) => item.uniqueId === testKey
+        );
         console.log(filteredData, "fg");
         if (filteredData === undefined) {
           setMessage("You don't have access to write this test");
@@ -65,7 +67,7 @@ export default function StudentLogin() {
             )?.path;
             navigate(path);
             fetch(
-              `https://script.google.com/macros/s/AKfycbwOQGjd-92PqhlEUiB0P6biCp86PqDNxNyIpeCFN3WNkNXDr7Gt8wAi1zZXI0qD0GcbcA/exec?key=${apiKey}&email=${email}`
+              `https://script.google.com/macros/s/AKfycbyZ1M9Wiq5XVZwik3Pe-HvaLaklv_USkK15l5GLzMjtHXDND9cXzbmNraolbnGlUIS9Ig/exec?key=${apiKey}&uniqueId=${testKey}`
             )
               .then((response) => console.log(response))
               .catch((err) => console.log(err));

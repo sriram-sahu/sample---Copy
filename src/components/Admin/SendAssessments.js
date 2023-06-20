@@ -71,7 +71,7 @@ const SendAssessments = () => {
       test: activeTest,
       phoneNo: student.phone,
       endDate: student.endDate,
-      uniqueId: random(),
+      uniqueId: "kloc" + random(),
       isCompleted: "incomplete",
     };
     console.log(details, "gh");
@@ -88,7 +88,7 @@ const SendAssessments = () => {
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
 
-    sendingMailThroughEmailJs(details);
+    // sendingMailThroughEmailJs(details);
   };
 
   const onClickSendAssessment = () => {

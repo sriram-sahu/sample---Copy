@@ -17,6 +17,7 @@ import MernDeveloperJunior from "./components/Student/StudentTests/MernDeveloper
 import MernDeveloperIntermediate from "./components/Student/StudentTests/MernDeveloperIntermediate";
 import FresherQATest from "./components/Student/StudentTests/FresherQATest";
 import Assessment from "./components/Admin/Assessment";
+import NotFound from "./components/Admin/NotFound";
 
 const App = () => {
   const [reports, setReports] = useState([]);
@@ -33,7 +34,7 @@ const App = () => {
           <Route path='/adminLogin' element={<AdminLogin />} />
           <Route path='/testReports' element={<TestReports />} />
           <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/sendAssessments' element={<Assessment />} />
+          <Route path='/sendAssessments' element={<SendAssessments />} />
 
           {/* student components */}
           <Route path='/studentLogin' element={<StudentLogin />} />
@@ -57,6 +58,7 @@ const App = () => {
             path='/mern-developer-intermediate-test'
             element={<MernDeveloperIntermediate />}
           />
+          <Route path='/notFound' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TestContext.Provider>
