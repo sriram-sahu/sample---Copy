@@ -6,6 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { gapi } from "gapi-script";
 
 const TestReports = () => {
   const navigate = useNavigate();
@@ -14,6 +15,8 @@ const TestReports = () => {
       name: "Fresher QA Test",
       id: "fresher_qa_test",
       url: "https://www.fitaacademy.in/includes/assets/img/blog/software-testing.jpg",
+      sheet_id: "1ersnrT9aiUcVrQXMAmoZhbO55jqrD_IYiy0fqn_mZH0",
+      sheet_name: "QA_Test",
     },
     {
       name: "Full Stack Developer Test",
@@ -82,7 +85,9 @@ const TestReports = () => {
                 <Button
                   sx={{ margin: "20px" }}
                   variant='contained'
-                  onClick={() => navigate(`/test/${each.id}`, { state: each })}
+                  onClick={() =>
+                    navigate(`/reports/${each.id}`, { state: each })
+                  }
                 >
                   View
                 </Button>

@@ -3,7 +3,6 @@ import TestContext from "./TestContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AdminLogin from "./components/Admin/AdminLogin";
 import TestReports from "./components/Admin/TestReports";
-import FresherQATest from "./components/Admin/Tests/FresherQATest";
 import SendAssessments from "./components/Admin/SendAssessments";
 import Dashboard from "./components/Admin/Dashboard";
 import StudentLogin from "./components/Student/StudentLogin";
@@ -16,6 +15,8 @@ import JavaTest from "./components/Student/StudentTests/JavaTest";
 import FrontEndFresherTest from "./components/Student/StudentTests/FrontEndFresherTest";
 import MernDeveloperJunior from "./components/Student/StudentTests/MernDeveloperJunior";
 import MernDeveloperIntermediate from "./components/Student/StudentTests/MernDeveloperIntermediate";
+import FresherQATest from "./components/Student/StudentTests/FresherQATest";
+import Assessment from "./components/Admin/Assessment";
 
 const App = () => {
   const [reports, setReports] = useState([]);
@@ -32,8 +33,7 @@ const App = () => {
           <Route path='/adminLogin' element={<AdminLogin />} />
           <Route path='/testReports' element={<TestReports />} />
           <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/sendAssessments' element={<SendAssessments />} />
-          <Route path='/test/fresher_qa_test' element={<FresherQATest />} />
+          <Route path='/sendAssessments' element={<Assessment />} />
 
           {/* student components */}
           <Route path='/studentLogin' element={<StudentLogin />} />

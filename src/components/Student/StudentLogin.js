@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, createPath, useNavigate } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -20,14 +20,14 @@ export default function StudentLogin() {
 
   const testDetails = [
     { testName: "Fresher Test", path: "/fresher-test" },
-    { testName: "Fresher QA Test", path: "/fresher-qa-test" },
+    { testName: "Freshers QA Test", path: "/fresher-qa-test" },
     {
       testName: "Full Stack Developer Test",
       path: "/fullstack-developer-test",
     },
     { testName: "Freshers Python Test", path: "/fresher-python-test" },
-    { testName: "Fresher Java Test", path: "/fresher-java-test" },
-    { testName: "Frontend Fresher Test", path: "/frontend-fresher-test" },
+    { testName: "Freshers Java Test", path: "/fresher-java-test" },
+    { testName: "Frontend Freshers Test", path: "/frontend-fresher-test" },
     { testName: "Shopify Developer Test", path: "/shopify-developer-test" },
     {
       testName: "MERN Developer Junior Test",
@@ -45,7 +45,7 @@ export default function StudentLogin() {
     console.log(email, testKey);
     const key = "AIzaSyAz1z7QqYvovxmnO-lvzoORcMC1UZzXNRE";
     fetch(
-      `https://script.google.com/macros/s/AKfycbylGTvCgg6GsRci6X5e7r-OoStzVFHXbwQncBFHVjmkrvOPfpENRfFKeJEBbDuyLaXlLQ/exec?key=${key}`
+      `https://script.google.com/macros/s/AKfycbwMZQgowv_cRQcdYTCzxZ2bFuoJ1BO736bY4mBTxwYxCYfljouz6oeBWKiCQ6Q3KQ_9nw/exec?key=${key}`
     )
       .then((response) => response.json())
       .then((result) => {
@@ -58,22 +58,17 @@ export default function StudentLogin() {
           if (filteredData.uniqueId == testKey) {
             setMessage("You can write the Test");
             const testName = filteredData.test;
+            console.log(filteredData, "test");
             const apiKey = "AIzaSyAz1z7QqYvovxmnO-lvzoORcMC1UZzXNRE";
-
-            const url = `https://script.google.com/macros/s/AKfycbyqjAu8_BQ7E3VXcbt2IdVLBtUs72UO7bE2N8nmGseqyGo8L29FHDAJBQOx-hqadpDbZg/exec?key=${apiKey}&email=${email}`;
-
-            fetch(url)
-              .then((response) => response.text())
-              .then((data) => {
-                console.log(data); // Handle the response data
-              })
-              .catch((error) => {
-                console.error("Error:", error);
-              });
             const path = testDetails.find(
               (test) => test.testName === testName
             )?.path;
             navigate(path);
+            fetch(
+              `https://script.google.com/macros/s/AKfycbwOQGjd-92PqhlEUiB0P6biCp86PqDNxNyIpeCFN3WNkNXDr7Gt8wAi1zZXI0qD0GcbcA/exec?key=${apiKey}&email=${email}`
+            )
+              .then((response) => console.log(response))
+              .catch((err) => console.log(err));
           } else {
             setMessage("Your email end password mismatch");
           }
