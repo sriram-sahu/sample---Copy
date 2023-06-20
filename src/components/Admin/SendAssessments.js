@@ -41,6 +41,7 @@ const SendAssessments = () => {
   };
 
   const sendingMailThroughEmailJs = (student) => {
+    console.log(student);
     emailjs
       .send(
         "service_okvqzif",
@@ -48,7 +49,7 @@ const SendAssessments = () => {
         {
           to_name: student.name,
           from_name: "kloc",
-          message: "https://dashboard.emailjs.com/admin/account",
+          message: `You have been invited to write ${student.test}. \n Your login email is ${student.email} and Test pin in ${student.uniqueId}. \n Test Link : http://localhost:3000/studentLogin`,
           to_email: student.email,
         },
         "MkG09aTM7gyK7zTog"
@@ -86,7 +87,10 @@ const SendAssessments = () => {
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
+
+    sendingMailThroughEmailJs(details);
   };
+
   const onClickSendAssessment = () => {
     console.log(candidateFields);
 
@@ -102,16 +106,15 @@ const SendAssessments = () => {
 
     candidateFields.forEach((each) => {
       updateStudentThroughSheetDb(each);
-      // sendingMailThroughEmailJs(each);
     });
   };
 
   return (
     <div>
       <Navbar />
-      <div className='send-page-container'>
+      <div>
         <div className='radio-button-container'>
-          <div className='d-flex'>
+          <div className='d-flex assessment-container'>
             <div>
               {tests.map((each, index) => (
                 <div className='radio-input-field-container' key={each}>
