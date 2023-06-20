@@ -57,7 +57,7 @@ export default function StudentLogin() {
         if (filteredData === undefined) {
           setMessage("You don't have access to write this test");
         } else if (filteredData.isCompleted === "incomplete") {
-          if (filteredData.uniqueId == testKey) {
+          if (filteredData.uniqueId === testKey) {
             setMessage("You can write the Test");
             const testName = filteredData.test;
             console.log(filteredData, "test");

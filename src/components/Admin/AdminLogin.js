@@ -141,7 +141,6 @@ const AdminLogin = () => {
 
   return (
     <div>
-      <Navbar />
       <div>
         <p>
           {isSignedIn ? (

@@ -4,6 +4,8 @@ import uniqueRandom from "unique-random";
 import emailjs from "@emailjs/browser";
 import "./index.css";
 import Navbar from "./Navbar";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 const tests = [
   "Fresher Test",
   "Freshers QA Test",
@@ -20,7 +22,14 @@ const SendAssessments = () => {
   const [studentCount, setStudentCount] = useState(1);
   const [proceeding, setProceeding] = useState(false);
   const [candidateFields, setCandidateFields] = useState([]);
+
+  const navigate = useNavigate();
+
   useEffect(() => {
+    const token = Cookies.get("token");
+    if (!token) {
+      navigate("/notFound");
+    }
     setStudentCount(1);
     setProceeding(false);
   }, [activeTest]);

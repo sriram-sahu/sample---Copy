@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { gapi } from "gapi-script";
+import Cookies from "js-cookie";
 
 const TestReports = () => {
   const navigate = useNavigate();
@@ -59,6 +60,13 @@ const TestReports = () => {
       url: "https://www.bigscal.com/wp-content/uploads/2022/09/Features-of-Mern-stack-development-services-You-Should-Know.png",
     },
   ];
+
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (!token) {
+      navigate("/notFound");
+    }
+  }, []);
 
   return (
     <div>

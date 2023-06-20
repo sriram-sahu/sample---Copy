@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import EachCandidateInputField from "./EachCandidateInputField";
+import Cookies from "js-cookie";
 
 const Assessment = () => {
   const [activeTest, setActiveTest] = useState("");
@@ -31,6 +32,7 @@ const Assessment = () => {
       return updatedFields;
     });
   };
+
   const onClickProceed = () => {
     if (activeTest === "") {
       alert("Select Test");
